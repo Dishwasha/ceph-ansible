@@ -9,7 +9,7 @@
 - name: test if initial mon keyring is in mon kv store
   command: ceph --cluster {{ cluster }} config-key get initial_mon_keyring
   changed_when: false
-  failed_when: false
+  ignore_errors: true
   always_run: true
   run_once: true
   register: is_initial_mon_keyring_in_kv
